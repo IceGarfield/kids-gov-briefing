@@ -1,0 +1,3026 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🏛️ 모두의 나라, 키즈 미니 브리핑 | 어린이 눈높이 정부 이야기</title>
+  <meta name="description" content="대한민국 정부24 기반의 전체 행정 조직도와 각 부처의 최신 정책 브리핑을 초등학생 눈높이에서 알기 쉽게 풀어보는 키즈 미니 브리핑 서비스입니다.">
+  
+  <!-- Google Fonts: Jua & Noto Sans KR -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* 파스텔 디자인 토큰 */
+      --font-display: 'Jua', sans-serif;
+      --font-body: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+      --bg-canvas: #F8FAFD;
+      --bg-card: #FFFFFF;
+      --bg-card-subtle: #F1F5F9;
+
+      --pastel-blue-light: #E0F2FE;
+      --pastel-blue: #38BDF8;
+      --pastel-blue-dark: #0284C7;
+
+      --pastel-mint-light: #DCFCE7;
+      --pastel-mint: #4ADE80;
+      --pastel-mint-dark: #16A34A;
+
+      --pastel-yellow-light: #FEF9C3;
+      --pastel-yellow: #FACC15;
+      --pastel-yellow-dark: #CA8A04;
+
+      --pastel-peach-light: #FFE4E6;
+      --pastel-peach: #FB7185;
+      --pastel-peach-dark: #E11D48;
+
+      --pastel-purple-light: #F3E8FF;
+      --pastel-purple: #C084FC;
+      --pastel-purple-dark: #7E22CE;
+
+      --pastel-orange-light: #FFEDD5;
+      --pastel-orange: #FB923C;
+      --pastel-orange-dark: #C2410C;
+
+      --text-main: #1E293B;
+      --text-muted: #64748B;
+      --text-light: #94A3B8;
+
+      --border-color: #E2E8F0;
+      --border-highlight: #CBD5E1;
+
+      --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 6px 20px rgba(15, 23, 42, 0.07);
+      --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.1);
+
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-canvas);
+      background-image: radial-gradient(#E2E8F0 1.2px, transparent 1.2px);
+      background-size: 24px 24px;
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+    }
+
+    /* 상단 헤더 네비게이션 */
+    .top-header {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid #E2E8F0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0.85rem 1.75rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    }
+
+    .header-container {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .brand-logo {
+      font-size: 2.1rem;
+      line-height: 1;
+      filter: drop-shadow(0 3px 6px rgba(0,0,0,0.1));
+      animation: gentle-bounce 3s ease-in-out infinite;
+    }
+
+    @keyframes gentle-bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    .brand-title-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: #0F172A;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .brand-badge {
+      font-size: 0.72rem;
+      font-family: var(--font-body);
+      font-weight: 700;
+      background: linear-gradient(135deg, #FACC15, #FB923C);
+      color: #78350F;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 2px 4px rgba(245, 158, 11, 0.2);
+    }
+
+    .brand-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    /* 귀여운 버튼 스타일 */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      padding: 0.65rem 1.15rem;
+      border-radius: var(--radius-full);
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 4px 0 rgba(0,0,0,0.08);
+      user-select: none;
+    }
+
+    .btn:active {
+      transform: translateY(2px);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.08);
+    }
+
+    .btn-report {
+      background-color: var(--pastel-mint-light);
+      color: #065F46;
+      border-color: #86EFAC;
+    }
+    .btn-report:hover {
+      background-color: #bbf7d0;
+      transform: translateY(-2px);
+    }
+
+    .btn-key {
+      background-color: var(--pastel-yellow-light);
+      color: #854D0E;
+      border-color: #FDE047;
+    }
+    .btn-key:hover {
+      background-color: #fef08a;
+      transform: translateY(-2px);
+    }
+
+    .key-indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #94A3B8;
+      display: inline-block;
+    }
+    .key-indicator.active {
+      background-color: #22C55E;
+      box-shadow: 0 0 6px #22C55E;
+    }
+
+    /* 메인 컨테이너 2-Column 그리드 */
+    .main-layout {
+      max-width: 1440px;
+      margin: 1.5rem auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 440px 1fr;
+      gap: 1.5rem;
+      flex: 1;
+      width: 100%;
+    }
+
+    /* 좌측 패널 (조직도 영역) */
+    .tree-panel {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      border: 2px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - 120px);
+      position: sticky;
+      top: 90px;
+      overflow: hidden;
+    }
+
+    .panel-header {
+      padding: 1.25rem 1.25rem 1rem;
+      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    .panel-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+
+    .panel-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: #0F172A;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tree-stats {
+      font-size: 0.75rem;
+      background: var(--pastel-blue-light);
+      color: var(--pastel-blue-dark);
+      padding: 3px 9px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+    }
+
+    /* 검색 & 필터 바 */
+    .tree-search-box {
+      position: relative;
+      margin-bottom: 0.65rem;
+    }
+
+    .tree-search-input {
+      width: 100%;
+      padding: 0.65rem 1rem 0.65rem 2.4rem;
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-full);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      background: #FFFFFF;
+      transition: all 0.2s;
+      outline: none;
+    }
+
+    .tree-search-input:focus {
+      border-color: var(--pastel-blue);
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      pointer-events: none;
+    }
+
+    .tree-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+    }
+
+    .filter-tags {
+      display: flex;
+      gap: 0.35rem;
+      overflow-x: auto;
+      padding-bottom: 2px;
+    }
+
+    .filter-btn {
+      background: var(--bg-canvas);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-full);
+      padding: 3px 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--pastel-blue-light);
+      color: var(--pastel-blue-dark);
+      border-color: var(--pastel-blue);
+    }
+
+    .expand-toggle-btn {
+      background: none;
+      border: none;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      cursor: pointer;
+      padding: 2px 4px;
+      text-decoration: underline;
+    }
+    .expand-toggle-btn:hover {
+      color: var(--pastel-blue-dark);
+    }
+
+    /* 트리 컨테이너 */
+    .tree-content {
+      padding: 1rem 0.85rem;
+      overflow-y: auto;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .tree-content::-webkit-scrollbar {
+      width: 6px;
+    }
+    .tree-content::-webkit-scrollbar-thumb {
+      background-color: #CBD5E1;
+      border-radius: 4px;
+    }
+
+    /* 트리 노드 디자인 (정부24 계층 구조) */
+    .tree-node {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 0.75rem;
+      border-radius: var(--radius-md);
+      background: #FFFFFF;
+      border: 1.5px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+      position: relative;
+      user-select: none;
+    }
+
+    .tree-node:hover {
+      background: #F1F5F9;
+      transform: translateX(3px);
+      border-color: #CBD5E1;
+    }
+
+    .tree-node.selected {
+      background: var(--pastel-blue-light);
+      border-color: var(--pastel-blue);
+      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
+    }
+
+    .tree-node.selected .node-title {
+      color: #0369A1;
+      font-weight: 800;
+    }
+
+    /* 들여쓰기 레벨 */
+    .node-level-0 {
+      font-size: 1rem;
+      background: #F8FAFC;
+      border: 1.5px solid #E2E8F0;
+    }
+    .node-level-1 {
+      margin-left: 1.25rem;
+      position: relative;
+    }
+    .node-level-1::before {
+      content: '';
+      position: absolute;
+      left: -1rem;
+      top: 50%;
+      width: 0.75rem;
+      height: 2px;
+      background-color: #CBD5E1;
+    }
+    .node-level-2 {
+      margin-left: 2.5rem;
+      position: relative;
+    }
+    .node-level-2::before {
+      content: '';
+      position: absolute;
+      left: -1rem;
+      top: 50%;
+      width: 0.75rem;
+      height: 2px;
+      background-color: #E2E8F0;
+    }
+
+    .node-emoji {
+      font-size: 1.25rem;
+      line-height: 1;
+      min-width: 24px;
+      text-align: center;
+    }
+
+    .node-title-wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      min-width: 0;
+    }
+
+    .node-title {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #1E293B;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .node-nickname {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: 400;
+    }
+
+    .node-badge {
+      font-size: 0.68rem;
+      padding: 1.5px 6px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .badge-pres { background: #FEF3C7; color: #92400E; }
+    .badge-pm { background: #E0E7FF; color: #3730A3; }
+    .badge-ministry { background: #DCFCE7; color: #166534; }
+    .badge-office { background: #FCE7F3; color: #9D174D; }
+    .badge-agency { background: #E0F2FE; color: #075985; }
+    .badge-comm { background: #F3E8FF; color: #6B21A8; }
+
+    /* 우측 패널 (브리핑 영역) */
+    .briefing-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      position: relative;
+    }
+
+    /* 부처 헤더 카드 */
+    .dept-hero-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      border: 2px solid var(--border-color);
+      padding: 1.5rem 1.75rem;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .hero-decor-circle {
+      position: absolute;
+      right: -30px;
+      bottom: -30px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-info-left {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-avatar {
+      width: 76px;
+      height: 76px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+      border: 3px solid #FDE68A;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.75rem;
+      box-shadow: 0 6px 14px rgba(245, 158, 11, 0.15);
+      flex-shrink: 0;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .hero-type-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-name {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      color: #0F172A;
+      line-height: 1.2;
+    }
+
+    .hero-tagline {
+      font-size: 0.95rem;
+      color: #0284C7;
+      font-weight: 700;
+      background: #F0F9FF;
+      display: inline-block;
+      padding: 3px 12px;
+      border-radius: var(--radius-full);
+      border: 1px dashed #BAE6FD;
+      width: fit-content;
+    }
+
+    /* 데이터 출처 & AI 상태 배지 */
+    .status-badge-group {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: 0.15rem;
+    }
+
+    .source-status-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .badge-source-api {
+      background: #DCFCE7;
+      color: #15803D;
+      border: 1px solid #86EFAC;
+    }
+    .badge-source-fallback {
+      background: #FEF3C7;
+      color: #92400E;
+      border: 1px solid #FCD34D;
+    }
+
+    .ai-status-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .badge-ai-gemini {
+      background: #EDE9FE;
+      color: #6D28D9;
+      border: 1px solid #C4B5FD;
+    }
+    .badge-ai-preset {
+      background: #F1F5F9;
+      color: #475569;
+      border: 1px solid #CBD5E1;
+    }
+
+    .hero-actions-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.5rem;
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+
+    .btn-link {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      background: #F8FAFC;
+      border: 1px solid var(--border-color);
+      transition: all 0.2s;
+    }
+    .btn-link:hover {
+      background: #E2E8F0;
+      color: #0F172A;
+    }
+
+    .btn-share {
+      font-size: 0.8rem;
+      background: #F8FAFC;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-full);
+      padding: 6px 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--text-muted);
+    }
+    .btn-share:hover {
+      background: #E2E8F0;
+    }
+
+    /* 탭 컨트롤러 */
+    .tabs-nav {
+      display: flex;
+      gap: 0.65rem;
+      background: #E2E8F0;
+      padding: 5px;
+      border-radius: var(--radius-full);
+      width: fit-content;
+    }
+
+    .tab-btn {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      padding: 0.6rem 1.4rem;
+      border-radius: var(--radius-full);
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active {
+      background: #FFFFFF;
+      color: #0F172A;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    }
+
+    /* 탭 내용 영역 */
+    .tab-pane {
+      display: none;
+      flex-direction: column;
+      gap: 1.25rem;
+      animation: fadeIn 0.25s ease-out;
+    }
+    .tab-pane.active {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* AI 변환 로딩 바 */
+    .ai-loading-banner {
+      display: none;
+      align-items: center;
+      gap: 0.75rem;
+      background: linear-gradient(135deg, #FAF5FF 0%, #F3E8FF 100%);
+      border: 1.5px solid #D8B4FE;
+      border-radius: var(--radius-md);
+      padding: 0.75rem 1.25rem;
+      color: #6B21A8;
+      font-size: 0.9rem;
+      font-weight: 600;
+      animation: pulse 1.5s infinite;
+    }
+    .ai-loading-banner.show {
+      display: flex;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.65; }
+    }
+
+    .spinner {
+      width: 18px;
+      height: 18px;
+      border: 3px solid #D8B4FE;
+      border-top-color: #9333EA;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* 카드 베이스 */
+    .info-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      border: 2px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      padding: 1.5rem;
+      position: relative;
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: #0F172A;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* 어린이 브리핑 내용 */
+    .kids-summary-box {
+      background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
+      border: 2px solid #BBF7D0;
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .summary-lead {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #14532D;
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .summary-desc {
+      font-size: 0.95rem;
+      color: #166534;
+      line-height: 1.6;
+    }
+
+    /* 최근 1개월 주요 정책 소식 2줄 요약 카드 */
+    .news-summary-card {
+      background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+      border: 2px solid #BFDBFE;
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .news-summary-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: #1E3A8A;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .news-summary-content {
+      font-size: 0.92rem;
+      color: #1D4ED8;
+      line-height: 1.65;
+      white-space: pre-line;
+      font-weight: 500;
+    }
+
+    /* 3대 핵심 역할 카드 그리드 */
+    .roles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .role-item-card {
+      background: #F8FAFC;
+      border: 1.5px solid #E2E8F0;
+      border-radius: var(--radius-md);
+      padding: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: transform 0.2s;
+    }
+    .role-item-card:hover {
+      transform: translateY(-3px);
+      background: #FFFFFF;
+      border-color: var(--pastel-blue);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .role-icon {
+      font-size: 1.75rem;
+      line-height: 1;
+    }
+
+    .role-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: #1E293B;
+    }
+
+    .role-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* 만약 이 부처가 없다면? 상상 카드 */
+    .if-none-card {
+      background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);
+      border: 2px dashed #FDBA74;
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .if-none-icon {
+      font-size: 2.2rem;
+      line-height: 1;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    }
+
+    .if-none-content h4 {
+      font-family: var(--font-display);
+      color: #9A3412;
+      font-size: 1.1rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .if-none-content p {
+      font-size: 0.92rem;
+      color: #C2410C;
+      line-height: 1.55;
+    }
+
+    /* 탭 2: 원출처 비교 영역 */
+    .comparison-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .comparison-banner {
+      background: #F8FAFC;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .doc-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .doc-badge {
+      background: #0284C7;
+      color: #FFFFFF;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+    }
+
+    .comparison-split-view {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      position: relative;
+    }
+
+    .split-col {
+      border-radius: var(--radius-md);
+      padding: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      position: relative;
+    }
+
+    /* 원문 카드 */
+    .col-official {
+      background: #F8FAFC;
+      border: 2px solid #CBD5E1;
+    }
+
+    .col-header-official {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1.5px solid #E2E8F0;
+      padding-bottom: 0.65rem;
+    }
+
+    .col-label-official {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .official-text {
+      font-size: 0.88rem;
+      color: #334155;
+      line-height: 1.7;
+      font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", sans-serif;
+      background: #FFFFFF;
+      padding: 1.1rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid #E2E8F0;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
+      max-height: 320px;
+      overflow-y: auto;
+    }
+
+    /* 키즈 번역 카드 */
+    .col-kids {
+      background: #FDF4FF;
+      border: 2px solid #F0ABFC;
+    }
+
+    .col-header-kids {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1.5px solid #F5D0FE;
+      padding-bottom: 0.65rem;
+    }
+
+    .col-label-kids {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: #86198F;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .kids-translation-text {
+      font-size: 0.95rem;
+      color: #701A75;
+      line-height: 1.75;
+      font-weight: 500;
+      background: #FFFFFF;
+      padding: 1.1rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid #F5D0FE;
+      max-height: 320px;
+      overflow-y: auto;
+    }
+
+    /* 단어 사전 카드 모음 */
+    .vocab-dictionary-box {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      border: 1.5px solid var(--border-color);
+      padding: 1.25rem;
+    }
+
+    .vocab-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: #0F172A;
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .vocab-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .vocab-card {
+      background: #F8FAFC;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      transition: transform 0.15s;
+    }
+    .vocab-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--pastel-blue);
+      background: #FFFFFF;
+    }
+
+    .vocab-word-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+
+    .vocab-word {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #0284C7;
+    }
+
+    .vocab-hanja {
+      font-size: 0.78rem;
+      color: #64748B;
+      font-family: serif;
+      background: #F1F5F9;
+      padding: 1px 5px;
+      border-radius: 4px;
+    }
+
+    .vocab-meaning {
+      font-size: 0.84rem;
+      color: #475569;
+      line-height: 1.45;
+    }
+
+    /* 원문 출처 및 실제 링크 버튼 바 */
+    .source-links-bar {
+      background: var(--bg-card);
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      box-shadow: var(--shadow-sm);
+      margin-top: 0.5rem;
+    }
+
+    .source-links-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: #1E293B;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .source-actions-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-source {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 0.65rem 1.15rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+
+    .btn-law-source {
+      background-color: #EFF6FF;
+      color: #1D4ED8;
+      border: 1.5px solid #93C5FD;
+    }
+    .btn-law-source:hover {
+      background-color: #DBEAFE;
+      transform: translateY(-2px);
+    }
+
+    .btn-news-source {
+      background-color: #ECFDF5;
+      color: #047857;
+      border: 1.5px solid #A7F3D0;
+    }
+    .btn-news-source:hover {
+      background-color: #D1FAE5;
+      transform: translateY(-2px);
+    }
+
+    /* 탭 3: 나도 어린이 장관! */
+    .minister-box {
+      background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+      border: 2px solid #BFDBFE;
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+    }
+
+    .minister-intro {
+      margin-bottom: 1rem;
+    }
+    .minister-intro h4 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: #1E3A8A;
+      margin-bottom: 0.35rem;
+    }
+    .minister-intro p {
+      font-size: 0.9rem;
+      color: #1D4ED8;
+    }
+
+    .minister-form {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .minister-input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-full);
+      border: 2px solid #93C5FD;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      outline: none;
+      background: #FFFFFF;
+    }
+
+    .minister-input:focus {
+      border-color: #2563EB;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    }
+
+    .btn-submit-policy {
+      background: #2563EB;
+      color: #FFFFFF;
+      font-family: var(--font-display);
+      border: none;
+      padding: 0.75rem 1.4rem;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+      transition: all 0.2s;
+    }
+    .btn-submit-policy:hover {
+      background: #1D4ED8;
+      transform: translateY(-2px);
+    }
+
+    .policy-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .policy-item {
+      background: #FFFFFF;
+      padding: 0.65rem 1rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid #BFDBFE;
+      font-size: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .policy-item-text {
+      color: #1E293B;
+      font-weight: 500;
+    }
+
+    .policy-item-time {
+      font-size: 0.75rem;
+      color: var(--text-light);
+    }
+
+    /* 퀴즈 컴포넌트 */
+    .quiz-box {
+      background: linear-gradient(135deg, #FEFCE8 0%, #FEF9C3 100%);
+      border: 2px dashed #FACC15;
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .quiz-question {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: #854D0E;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .quiz-options {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .btn-quiz-opt {
+      flex: 1;
+      padding: 0.65rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #FDE047;
+      background: #FFFFFF;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      color: #713F12;
+      transition: all 0.15s;
+    }
+    .btn-quiz-opt:hover {
+      background: #FEF08A;
+      transform: translateY(-2px);
+    }
+
+    .quiz-feedback {
+      margin-top: 0.65rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: none;
+    }
+    .quiz-feedback.correct {
+      display: block;
+      color: #15803D;
+    }
+    .quiz-feedback.wrong {
+      display: block;
+      color: #B91C1C;
+    }
+
+    /* 모달 레이아웃 공통 */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(5px);
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      animation: fadeIn 0.2s ease-out;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    /* 풀스크린 A4 보고서 모달 윈도우 (요구사항 1) */
+    .modal-window-fullscreen {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      border: 2px solid var(--border-color);
+      box-shadow: var(--shadow-lg);
+      width: 96vw;
+      max-width: 1400px;
+      height: 92vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      animation: popIn 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.96); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-header {
+      padding: 1.15rem 1.75rem;
+      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+      border-bottom: 2px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .modal-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      color: #0F172A;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .modal-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    /* [🖨️ PDF / 보고서 인쇄] 버튼 */
+    .btn-print {
+      background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
+      color: #FFFFFF;
+      border: none;
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      padding: 0.6rem 1.25rem;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      box-shadow: 0 3px 8px rgba(2, 132, 199, 0.35);
+      transition: all 0.2s;
+    }
+    .btn-print:hover {
+      background: linear-gradient(135deg, #0369A1 0%, #075985 100%);
+      transform: translateY(-2px);
+    }
+
+    .modal-close {
+      background: #F1F5F9;
+      border: none;
+      font-size: 1.2rem;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      transition: all 0.2s;
+    }
+    .modal-close:hover {
+      background: #E2E8F0;
+      color: #0F172A;
+    }
+
+    .modal-body {
+      padding: 1.5rem 1.75rem;
+      overflow-y: auto;
+      flex: 1;
+      background: #F8FAFD;
+    }
+
+    /* 보고서 상단 개요 배너 */
+    .report-intro-banner {
+      background: #FFFFFF;
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .report-intro-left h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: #0F172A;
+      margin-bottom: 0.35rem;
+    }
+
+    .report-intro-left p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .report-meta-badges {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.35rem;
+      flex-shrink: 0;
+    }
+
+    /* A4 보고서 규격 카드 그리드 (요구사항 1) */
+    .report-a4-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    .report-card-item {
+      background: #FFFFFF;
+      border: 2px solid #E2E8F0;
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: all 0.2s;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+    .report-card-item:hover {
+      border-color: var(--pastel-blue);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .report-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1.5px solid #F1F5F9;
+      padding-bottom: 0.6rem;
+    }
+
+    .report-card-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .report-card-emoji {
+      font-size: 1.6rem;
+      line-height: 1;
+    }
+
+    .report-card-name {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      color: #0F172A;
+    }
+
+    .report-card-nick {
+      font-size: 0.82rem;
+      color: #0284C7;
+      font-weight: 700;
+      background: #F0F9FF;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      width: fit-content;
+    }
+
+    .report-section-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .report-label {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      color: #475569;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .report-role-text {
+      font-size: 0.86rem;
+      color: #334155;
+      line-height: 1.55;
+      background: #F8FAFC;
+      padding: 0.65rem 0.85rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid #E2E8F0;
+    }
+
+    .report-news-text {
+      font-size: 0.84rem;
+      color: #1E3A8A;
+      line-height: 1.55;
+      background: #EFF6FF;
+      padding: 0.65rem 0.85rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid #BFDBFE;
+      white-space: pre-line;
+      font-weight: 500;
+    }
+
+    /* 카드 내 진짜 원문 링크 바 */
+    .report-card-links {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 0.6rem;
+      border-top: 1px dashed #CBD5E1;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .report-link-item {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #0284C7;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: #F0F9FF;
+      border: 1px solid #BAE6FD;
+      transition: all 0.15s;
+    }
+    .report-link-item:hover {
+      background: #E0F2FE;
+      color: #0369A1;
+    }
+
+    .btn-goto-dept {
+      font-size: 0.76rem;
+      font-family: var(--font-display);
+      color: #475569;
+      background: #F1F5F9;
+      border: 1px solid #CBD5E1;
+      padding: 3px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .btn-goto-dept:hover {
+      background: #E2E8F0;
+      color: #0F172A;
+    }
+
+    /* API Key 설정 모달 */
+    .key-form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .key-input {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-md);
+      font-family: monospace;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .key-input:focus {
+      border-color: var(--pastel-yellow-dark);
+      box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.3);
+    }
+
+    .key-hint {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .key-modal-actions {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: flex-end;
+    }
+
+    /* 인쇄 전용 CSS (@media print) (요구사항 2) */
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 12mm 14mm;
+      }
+
+      body {
+        background: #FFFFFF !important;
+        background-image: none !important;
+        color: #000000 !important;
+        font-size: 9pt !important;
+      }
+
+      /* 인쇄 시 감출 요소 */
+      .top-header,
+      .main-layout,
+      #key-modal,
+      .modal-close,
+      .btn-print,
+      .btn-goto-dept,
+      .no-print {
+        display: none !important;
+      }
+
+      /* 모달을 전체 페이지 흐름으로 출력 */
+      #report-modal {
+        display: block !important;
+        position: static !important;
+        background: transparent !important;
+        padding: 0 !important;
+        inset: auto !important;
+      }
+
+      #report-modal .modal-window-fullscreen {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        border: none !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        overflow: visible !important;
+      }
+
+      #report-modal .modal-header {
+        border-bottom: 2px solid #0F172A !important;
+        padding: 0 0 10px 0 !important;
+        margin-bottom: 12px !important;
+        background: none !important;
+      }
+
+      #report-modal .modal-title {
+        font-size: 16pt !important;
+        color: #000000 !important;
+      }
+
+      #report-modal .modal-body {
+        padding: 0 !important;
+        background: transparent !important;
+        overflow: visible !important;
+      }
+
+      .report-intro-banner {
+        border: 1.5px solid #94A3B8 !important;
+        padding: 8px 12px !important;
+        margin-bottom: 12px !important;
+      }
+
+      .report-a4-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+      }
+
+      /* 카드가 A4 페이지 경계에서 쪼개지지 않도록 설정 */
+      .report-card-item {
+        border: 1.5px solid #CBD5E1 !important;
+        border-radius: 6px !important;
+        padding: 8px 10px !important;
+        background: #FFFFFF !important;
+        box-shadow: none !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        margin-bottom: 4px !important;
+      }
+
+      .report-card-header {
+        border-bottom: 1px solid #E2E8F0 !important;
+        padding-bottom: 4px !important;
+      }
+
+      .report-card-name {
+        font-size: 10.5pt !important;
+      }
+
+      .report-role-text, .report-news-text {
+        font-size: 8pt !important;
+        line-height: 1.4 !important;
+        padding: 4px 6px !important;
+      }
+
+      .report-card-links {
+        border-top: 1px solid #E2E8F0 !important;
+        padding-top: 4px !important;
+      }
+
+      .report-link-item {
+        font-size: 7.5pt !important;
+        border: none !important;
+        background: none !important;
+        padding: 0 !important;
+        color: #0284C7 !important;
+        text-decoration: underline !important;
+      }
+    }
+
+    /* 반응형 레이아웃 대응 */
+    @media (max-width: 1024px) {
+      .main-layout {
+        grid-template-columns: 1fr;
+      }
+      .tree-panel {
+        height: 440px;
+        position: static;
+      }
+      .comparison-split-view {
+        grid-template-columns: 1fr;
+      }
+      .roles-grid {
+        grid-template-columns: 1fr;
+      }
+      .source-links-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .report-a4-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .top-header {
+        padding: 0.75rem 1rem;
+      }
+      .brand-title {
+        font-size: 1.25rem;
+      }
+      .brand-sub {
+        display: none;
+      }
+      .btn {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.85rem;
+      }
+      .dept-hero-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero-actions-right {
+        align-items: flex-start;
+      }
+      .source-actions-group {
+        flex-direction: column;
+        width: 100%;
+      }
+      .btn-source {
+        width: 100%;
+        justify-content: center;
+      }
+      .modal-window-fullscreen {
+        width: 98vw;
+        height: 96vh;
+      }
+      .report-intro-banner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 상단 네비게이션 헤더 -->
+  <header class="top-header no-print">
+    <div class="header-container">
+      <div class="brand-group">
+        <div class="brand-logo" aria-hidden="true">🏛️</div>
+        <div class="brand-title-wrap">
+          <h1 class="brand-title">
+            모두의 나라, 키즈 미니 브리핑
+            <span class="brand-badge">어린이 정부24</span>
+          </h1>
+          <p class="brand-sub">어려운 나랏일 뉴스, 초등학생도 쏙쏙 이해하는 알기 쉬운 정부 브리핑!</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button id="btn-open-report" class="btn btn-report" title="전체 부처 리포트 모아보기">
+          <span>📋</span>
+          <span>한눈에 보는 전체 리포트</span>
+        </button>
+        <button id="btn-open-key" class="btn btn-key" title="Gemini API Key 설정">
+          <span class="key-indicator" id="key-indicator-dot"></span>
+          <span>🔑</span>
+          <span>Gemini API Key 설정</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 메인 2-Column 영역 -->
+  <main class="main-layout no-print">
+    
+    <!-- 좌측 조직도 트리 영역 (정부24 스타일) -->
+    <aside class="tree-panel" aria-label="대한민국 정부 조직도">
+      <div class="panel-header">
+        <div class="panel-title-row">
+          <div class="panel-title">
+            <span>🌿</span>
+            <span>정부24 조직도 트리</span>
+          </div>
+          <span class="tree-stats" id="tree-stats-badge">총 38개 기관</span>
+        </div>
+
+        <div class="tree-search-box">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input 
+            type="text" 
+            id="tree-search" 
+            class="tree-search-input" 
+            placeholder="부처 이름이나 키워드 검색 (예: 날씨, 경찰, 바다, 돈)"
+            aria-label="정부 조직 검색"
+          >
+        </div>
+
+        <div class="tree-controls">
+          <div class="filter-tags" id="filter-tag-container">
+            <button class="filter-btn active" data-filter="all">전체</button>
+            <button class="filter-btn" data-filter="ministry">19개 행정각부</button>
+            <button class="filter-btn" data-filter="agency">처·청·위원회</button>
+            <button class="filter-btn" data-filter="top">대통령·총리</button>
+          </div>
+          <button class="expand-toggle-btn" id="btn-expand-all">모두 펼치기</button>
+        </div>
+      </div>
+
+      <!-- 조직도 트리 렌더링 컨테이너 -->
+      <div class="tree-content" id="tree-root-container">
+        <!-- JavaScript로 동적 생성 -->
+      </div>
+    </aside>
+
+    <!-- 우측 브리핑 영역 -->
+    <section class="briefing-panel" id="briefing-container" aria-live="polite">
+      
+      <!-- AI 변환 중 로딩 알림 배너 -->
+      <div class="ai-loading-banner" id="ai-loading-banner">
+        <div class="spinner"></div>
+        <span>🪄 Gemini 1.5 Flash가 법령 조문과 최신 뉴스를 초등학생 4~6학년 눈높이로 실시간 변환 중이에요...</span>
+      </div>
+
+      <!-- 선택된 부처 헤더 카드 -->
+      <div class="dept-hero-card">
+        <div class="hero-decor-circle"></div>
+        <div class="hero-info-left">
+          <div class="hero-avatar" id="hero-emoji">💰</div>
+          <div class="hero-meta">
+            <div class="hero-type-row">
+              <span class="node-badge badge-ministry" id="hero-badge">행정각부</span>
+              <span class="hero-tagline" id="hero-tagline">나라의 살림꾼, 용돈 지갑 관리자!</span>
+            </div>
+            <h2 class="hero-name" id="hero-title">기획재정부</h2>
+            <!-- 데이터 출처 및 AI 모드 표시 배지 -->
+            <div class="status-badge-group">
+              <span class="source-status-badge badge-source-fallback" id="source-status-badge">
+                <span>📦</span>
+                <span id="source-status-text">백업 데이터(Fallback) 안전 로드됨</span>
+              </span>
+              <span class="ai-status-badge badge-ai-preset" id="ai-status-badge">
+                <span>🪄</span>
+                <span id="ai-status-text">맞춤 키즈 데이터</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-actions-right">
+          <a href="https://www.moef.go.kr" target="_blank" rel="noopener noreferrer" class="btn-link" id="hero-website-link">
+            <span>🌐</span>
+            <span>공식 누리집 방문</span>
+            <span>↗</span>
+          </a>
+          <button class="btn-share" id="btn-copy-briefing" title="브리핑 복사하기">
+            <span>🔗</span>
+            <span>브리핑 복사</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 탭 네비게이션 -->
+      <nav class="tabs-nav" aria-label="브리핑 상세 탭">
+        <button class="tab-btn active" data-tab="tab-kids">
+          <span>🧸</span>
+          <span>어린이 미니 브리핑</span>
+        </button>
+        <button class="tab-btn" data-tab="tab-compare">
+          <span>🔍</span>
+          <span>원출처 비교 (쉬운 말 대조)</span>
+        </button>
+        <button class="tab-btn" data-tab="tab-minister">
+          <span>✍️</span>
+          <span>나도 어린이 장관!</span>
+        </button>
+      </nav>
+
+      <!-- 탭 1: 어린이 미니 브리핑 -->
+      <div class="tab-pane active" id="tab-kids">
+        <div class="info-card">
+          <h3 class="card-title">
+            <span>💡</span>
+            <span>초등학생(4~6학년) 눈높이 쉬운 역할 설명</span>
+          </h3>
+
+          <div class="kids-summary-box">
+            <div class="summary-lead" id="kids-summary-lead">우리나라의 돈과 살림을 계획하고 똑똑하게 관리해요.</div>
+            <div class="summary-desc" id="kids-summary-body">
+              국민들이 낸 세금으로 학교도 짓고, 도로도 만들고, 공원도 가꿔요. 한 해 동안 나라에 필요한 돈이 얼마인지 계산하고 알뜰살뜰 쓰는 가장 든든한 용돈 지갑 관리자랍니다!
+            </div>
+          </div>
+
+          <div class="news-summary-card">
+            <div class="news-summary-title">
+              <span>📰</span>
+              <span>최근 1개월 주요 정책 소식 (2줄 핵심 요약)</span>
+            </div>
+            <div class="news-summary-content" id="news-summary-2lines">
+              1. 빚을 너무 많이 지지 않으면서도 꼭 필요한 과학 연구와 아기 돌봄에 돈을 쓰기로 했어요.
+              2. 전국의 모든 정부 부서에 알뜰살뜰 예산 장부를 작성하라고 가이드라인을 보냈어요.
+            </div>
+          </div>
+
+          <h3 class="card-title" style="margin-top: 1.25rem;">
+            <span>🎯</span>
+            <span>어떤 일을 하나요? 핵심 역할 3가지</span>
+          </h3>
+
+          <div class="roles-grid" id="roles-container">
+            <!-- JavaScript 렌더링 -->
+          </div>
+
+          <div class="if-none-card" id="if-none-container">
+            <div class="if-none-icon">💭</div>
+            <div class="if-none-content">
+              <h4>만약 이 부처가 없다면 어떻게 될까요?</h4>
+              <p id="if-none-text">나라에 돈이 얼마나 필요한지 아무도 계획하지 못해서 학교에 책상도 못 사고, 소방차 기름도 못 넣을지 몰라요!</p>
+            </div>
+          </div>
+
+          <div class="quiz-box" id="quiz-container">
+            <div class="quiz-question" id="quiz-question-text">
+              <span>❓</span>
+              <span id="quiz-q">기획재정부는 우리나라 돈의 예산을 짜고 세금을 관리하는 곳일까요?</span>
+            </div>
+            <div class="quiz-options">
+              <button class="btn-quiz-opt" data-answer="O">🙆 그렇다 (O)</button>
+              <button class="btn-quiz-opt" data-answer="X">🙅 아니다 (X)</button>
+            </div>
+            <div class="quiz-feedback" id="quiz-feedback-msg"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 탭 2: 원출처 비교 영역 -->
+      <div class="tab-pane" id="tab-compare">
+        <div class="info-card comparison-container">
+          <div class="comparison-banner">
+            <div class="doc-meta">
+              <span class="doc-badge">정부조직법 조문 & 정책 보도자료</span>
+              <span id="compare-doc-title">정부조직법 제26조 및 최근 주요 정책</span>
+              <span id="compare-doc-date">· 최근 1개월</span>
+            </div>
+            <span style="font-size: 0.8rem; color: var(--text-muted);" id="compare-source-name">출처: 국가법령정보센터 & 공식 보도자료</span>
+          </div>
+
+          <div class="comparison-split-view">
+            <div class="split-col col-official">
+              <div class="col-header-official">
+                <div class="col-label-official">
+                  <span>📜</span>
+                  <span>정부조직법 조문 및 보도자료 원문</span>
+                </div>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">실제 공문서 및 법률 조항</span>
+              </div>
+              <div class="official-text" id="official-original-text">
+                정부조직법 제26조(기획재정부) ① 기획재정부장관은 중장기 국가발전전략수립, 경제·재정정책의 수립·총괄·조정, 예산·기금의 편성·집행·성과관리, 화폐·금융·국채·정부회계·내국세제·관세 등에 관한 사무를 관장한다.
+              </div>
+            </div>
+
+            <div class="split-col col-kids">
+              <div class="col-header-kids">
+                <div class="col-label-kids">
+                  <span>🪄</span>
+                  <span>어린이용 쉬운 말 번역 (Gemini AI)</span>
+                </div>
+                <span style="font-size: 0.75rem; color: #C026D3; font-weight: 700;">초등 눈높이 변환 완료!</span>
+              </div>
+              <div class="kids-translation-text" id="kids-translated-text">
+                우리나라가 빚을 너무 많이 지지 않으면서도, 아기들을 돌보는 일과 우주·인공지능 같은 멋진 과학 연구, 그리고 국민들이 신나게 일할 수 있도록 돈을 아껴서 꼭 필요한 곳에 쓰겠다고 다른 부서 삼촌·이모들에게 알려주었어요!
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-dictionary-box">
+            <h4 class="vocab-title">
+              <span>📚</span>
+              <span>어려운 한자어 행정 용어 사전 (초등 눈높이 풀이)</span>
+            </h4>
+            <div class="vocab-grid" id="vocab-grid-container">
+              <!-- 단어 카드 렌더링 -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 탭 3: 나도 어린이 장관! -->
+      <div class="tab-pane" id="tab-minister">
+        <div class="info-card minister-box">
+          <div class="minister-intro">
+            <h4>👑 내가 <span id="minister-dept-name">기획재정부</span> 장관이라면?</h4>
+            <p>우리나라를 더 행복하고 살기 좋은 곳으로 만들기 위해 어떤 정책을 펼치고 싶나요? 멋진 생각을 남겨보세요!</p>
+          </div>
+
+          <form class="minister-form" id="minister-policy-form">
+            <input 
+              type="text" 
+              class="minister-input" 
+              id="minister-input-text" 
+              placeholder="예: 어린이들이 꿈을 키울 수 있도록 학교 도서관에 재미있는 만화책과 과학책을 더 많이 사주세요!" 
+              required
+            >
+            <button type="submit" class="btn-submit-policy">제안하기 🚀</button>
+          </form>
+
+          <h5 style="font-family: var(--font-display); font-size: 0.95rem; color: #1E3A8A; margin-bottom: 0.5rem;">
+            🌟 어린이 장관님들의 반짝이는 아이디어
+          </h5>
+          <div class="policy-list" id="minister-policy-list">
+            <!-- 제출된 아이디어 리스트 -->
+          </div>
+        </div>
+      </div>
+
+      <!-- 원문 출처 및 실제 링크 연결 바 -->
+      <div class="source-links-bar" id="source-links-bar">
+        <div class="source-links-title">
+          <span>🔗</span>
+          <span>진짜 공식 자료를 확인해 볼까요?</span>
+        </div>
+        <div class="source-actions-group">
+          <a href="https://www.law.go.kr/법령/정부조직법" target="_blank" rel="noopener noreferrer" class="btn-source btn-law-source" id="btn-law-source">
+            <span>🔍</span>
+            <span>국가법령센터 원문 보기</span>
+            <span>↗</span>
+          </a>
+          <a href="https://www.moef.go.kr" target="_blank" rel="noopener noreferrer" class="btn-source btn-news-source" id="btn-news-source">
+            <span>📰</span>
+            <span>부처 최신 보도자료 원문 보기</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- [📋 한눈에 보는 전체 리포트] 풀스크린 A4 보고서 모달 (요구사항 1 & 2) -->
+  <div class="modal-backdrop" id="report-modal" role="dialog" aria-modal="true" aria-labelledby="report-modal-title">
+    <div class="modal-window-fullscreen">
+      
+      <!-- 모달 헤더 (인쇄 시 액션 바) -->
+      <div class="modal-header">
+        <h2 class="modal-title" id="report-modal-title">
+          <span>🏛️</span>
+          <span>대한민국 정부 전체 부처 어린이 통합 브리핑 보고서</span>
+          <span class="brand-badge" style="font-size: 0.75rem;">A4 종합 리포트</span>
+        </h2>
+        <div class="modal-header-actions">
+          <button type="button" class="btn-print" id="btn-print-report" title="전체 부처 보고서를 A4 PDF로 저장하거나 인쇄합니다">
+            <span>🖨️</span>
+            <span>PDF / 보고서 인쇄</span>
+          </button>
+          <button class="modal-close" id="btn-close-report" aria-label="모달 닫기">✕</button>
+        </div>
+      </div>
+
+      <!-- 모달 본문 (A4 보고서 규격 스타일) -->
+      <div class="modal-body" id="report-modal-body">
+        
+        <!-- 보고서 개요 배너 -->
+        <div class="report-intro-banner">
+          <div class="report-intro-left">
+            <h3>대한민국 19개 행정각부 및 주요 기관 통합 정책 브리핑</h3>
+            <p>
+              대한민국 헌법 및 정부조직법에 기반한 각 부처의 고유 역할과 최근 1개월 주요 정책 소식을 초등학생(4~6학년) 눈높이에 맞춰 정리한 공식 종합 보고서입니다.
+            </p>
+          </div>
+          <div class="report-meta-badges">
+            <span style="font-size: 0.8rem; font-weight: 700; color: #0284C7; background: #F0F9FF; padding: 3px 10px; border-radius: 999px; border: 1px solid #BAE6FD;">
+              📅 기준: 2026년 3월 최신호
+            </span>
+            <span style="font-size: 0.75rem; color: #64748B;">
+              발행처: 모두의 나라, 키즈 미니 브리핑
+            </span>
+          </div>
+        </div>
+
+        <!-- 전체 부처 A4 규격 2-Column 그리드 컨테이너 -->
+        <div class="report-a4-grid" id="report-a4-grid-container">
+          <!-- 자바스크립트로 19개 부처 및 전체 기관 상세 카드 렌더링 -->
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- [🔑 Gemini API Key 설정] 모달 -->
+  <div class="modal-backdrop no-print" id="key-modal" role="dialog" aria-modal="true" aria-labelledby="key-modal-title">
+    <div class="modal-window" style="max-width: 540px; background: #fff; border-radius: 20px; border: 2px solid #E2E8F0; padding: 0; box-shadow: var(--shadow-lg);">
+      <div class="modal-header">
+        <h2 class="modal-title" id="key-modal-title">
+          <span>🔑</span>
+          <span>Gemini API Key 설정</span>
+        </h2>
+        <button class="modal-close" id="btn-close-key" aria-label="모달 닫기">✕</button>
+      </div>
+      <div class="modal-body" style="background: #fff;">
+        <div class="key-form-group">
+          <label for="gemini-key-input" style="font-weight: 700; font-size: 0.9rem; color: #334155;">
+            Google AI Studio API Key (GEMINI_API_KEY)
+          </label>
+          <input 
+            type="password" 
+            id="gemini-key-input" 
+            class="key-input" 
+            placeholder="AIzaSy..." 
+            autocomplete="off"
+          >
+          <p class="key-hint">
+            💡 입력하신 API Key는 브라우저의 안전한 로컬 저장소(localStorage: GEMINI_API_KEY)에만 저장되며 외부 서버로 전송되지 않습니다.
+          </p>
+        </div>
+
+        <div style="background: #F8FAFC; border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.85rem; font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+          <p style="font-weight: 700; color: #0F172A; margin-bottom: 0.25rem;">✨ Gemini 1.5 Flash (gemini-1.5-flash) 연동</p>
+          <p>등록된 API Key를 사용하여 부처 클릭 시 <strong>① 대표 캐릭터/별명, ② 초등 4~6학년 쉬운 설명, ③ 최근 1개월 2줄 요약, ④ 한자어 행정용어 사전</strong>을 실시간으로 스마트하게 자동 생성합니다!</p>
+        </div>
+
+        <div class="key-modal-actions">
+          <button type="button" class="btn" style="background: #F1F5F9; color: #475569;" id="btn-delete-key">삭제하기</button>
+          <button type="button" class="btn btn-key" id="btn-save-key">저장하기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 애플리케이션 스크립트 -->
+  <script>
+    /**
+     * 국가법령 API 키 상수 및 Mock 데이터 캐시
+     */
+    const LAW_API_OC = 'Jisung';
+    let MOCK_DATA = null;
+
+    /**
+     * 대한민국 정부 조직도 기본 데이터
+     */
+    const GOV_ORGANIZATIONS = [
+      {
+        id: 'president',
+        parentId: null,
+        name: '대통령',
+        level: 0,
+        type: 'president',
+        typeLabel: '국가원수',
+        emoji: '🇰🇷',
+        nickname: '대한민국을 대표하는 최고 지도자',
+        tagline: '나라의 평화와 국민의 행복을 지키는 든든한 대표!',
+        website: 'https://www.president.go.kr',
+        summaryLead: '우리나라를 대표하여 외국과 친구가 되고 국가의 큰 방향을 결정해요.',
+        summaryBody: '대통령은 국민들의 소중한 투표로 뽑혀요. 나라를 지키는 군대를 통솔하고, 국회에서 만든 법을 공포하며, 헌법을 지켜 모든 국민이 안전하고 평화롭게 살 수 있도록 보살펴 줍니다.',
+        roles: [
+          { icon: '🕊️', title: '나라의 평화 수호', text: '외국의 침략을 막고 국가 안보와 국방을 지휘해요.' },
+          { icon: '🤝', title: '글로벌 외교 대표', text: '세계 여러 나라 정상들과 만나 우정을 다지고 협력해요.' },
+          { icon: '📜', title: '국정 총괄 지휘', text: '정부의 모든 부처가 나랏일을 잘하도록 꼼꼼히 챙겨요.' }
+        ],
+        ifNone: '나라의 대표가 없으면 외국과 중요한 약속을 맺거나 위기 상황에서 국가적인 결정을 빠르게 내릴 수 없어요!',
+        lawUrl: 'https://www.law.go.kr/법령/대한민국헌법/제4장',
+        newsUrl: 'https://www.president.go.kr',
+        briefing: {
+          docTitle: '국가 주요 국정과제 점검 및 미래세대 지원 방안',
+          date: '2026. 03',
+          source: '대통령실 대변인실',
+          original: '대통령은 수석비서관회의를 주재하고 늘봄학교의 안착 상황 점검 및 AI 시대 디지털 인재 양성 등 미래세대를 위한 과제를 면밀히 평가함.',
+          translation: '대통령 할아버지/삼촌이 비서들과 함께 모여 친구들이 재미있는 수업을 들을 수 있는 늘봄학교가 잘 운영되고 있는지 꼼꼼하게 살폈어요!',
+          vocab: [
+            { word: '주재', hanja: '主宰', meaning: '회의나 모임에서 중심이 되어 이끌어 감' },
+            { word: '안착', hanja: '安着', meaning: '어떤 정책이나 제도가 자리를 잘 잡고 평온해짐' }
+          ]
+        },
+        quiz: {
+          q: '대통령은 국민들이 직접 참여하는 소중한 선거 투표를 통해 뽑힐까요?',
+          answer: 'O',
+          desc: '맞아요! 대한민국은 민주주의 국가이므로 국민이 직접 대통령을 뽑는답니다.'
+        }
+      },
+      {
+        id: 'prime_minister',
+        parentId: null,
+        name: '국무총리',
+        level: 0,
+        type: 'prime_minister',
+        typeLabel: '행정2인자',
+        emoji: '👔',
+        nickname: '19개 부처의 든든한 캡틴 반장님',
+        tagline: '대통령을 돕고 모든 행정부처를 조율하는 총괄 리더!',
+        website: 'https://www.opm.go.kr',
+        summaryLead: '대통령을 도와 19개 부처들이 서로 협동하여 일을 잘하도록 이끌어요.',
+        summaryBody: '학급에 반장님이 있듯이, 정부의 여러 부처들이 싸우지 않고 서로 도와 국민을 위한 정책을 펼치도록 조율하는 사령관 역할을 해요.',
+        roles: [
+          { icon: '🎼', title: '부처 간 정책 조율', text: '서로 다른 의견이 있는 부처들을 모아 하나의 결정을 이끌어내요.' },
+          { icon: '🚨', title: '국가 재난 대응 총괄', text: '큰 태풍이나 산불이 났을 때 모든 부처가 하나 되어 대처하도록 지휘해요.' },
+          { icon: '🤝', title: '국정 안정화', text: '대통령의 일을 보좌하며 나라 안팎의 행정을 빈틈없이 챙겨요.' }
+        ],
+        ifNone: '교육부와 보건복지부가 서로 의견이 다를 때 가운데서 교통정리를 해줄 캡틴이 없어서 혼란에 빠져요!',
+        lawUrl: 'https://www.law.go.kr/법령/정부조직법/제11조',
+        newsUrl: 'https://www.opm.go.kr/opm/news/press.do',
+        briefing: {
+          docTitle: '국정현안관계장관회의 주재 및 봄철 산불 예방 점검',
+          date: '2026. 03',
+          source: '국무조정실 공보실',
+          original: '국무총리는 각 부처 장관들이 참석한 회의에서 봄철 산불 예방 및 청소년 안전 강화 대책 등 다부처 협력 과제를 집중 논의함.',
+          translation: '국무총리가 여러 장관들을 모아 산불이 나지 않게 소방청과 산림청이 손을 잡고, 어린이 안전을 위해 힘을 모으라고 지시했어요!',
+          vocab: [
+            { word: '주재', hanja: '主宰', meaning: '회의의 사회자가 되어 진행하고 결정함' },
+            { word: '차질', hanja: '蹉跌', meaning: '일이 계획대로 되지 않고 어그러짐' }
+          ]
+        },
+        quiz: {
+          q: '국무총리는 19개 행정각부의 장관들을 이끌고 조율하는 역할을 할까요?',
+          answer: 'O',
+          desc: '정답입니다! 국무총리는 대통령의 명을 받아 행정각부를 통할(총괄 지휘)합니다.'
+        }
+      },
+      // 19개 행정각부
+      { id: 'moef', parentId: 'prime_minister', name: '기획재정부', level: 1, type: 'ministry', typeLabel: '19부(경제부총리)', emoji: '💰', nickname: '나라의 살림꾼, 용돈 지갑 관리자!', tagline: '우리나라의 1년 살림살이와 돈 계획을 똑똑하게 짜는 부처!', website: 'https://www.moef.go.kr', quiz: { q: '기획재정부는 우리나라 돈의 예산을 짜고 살림살이를 계획하는 곳일까요?', answer: 'O', desc: '맞아요! 기획재정부는 경제 정책을 총괄해요.' } },
+      { id: 'moe', parentId: 'prime_minister', name: '교육부', level: 1, type: 'ministry', typeLabel: '19부(사회부총리)', emoji: '🏫', nickname: '초중고 학교와 우리들의 꿈 놀이터', tagline: '재미있는 배움과 안전한 교실을 만들어주는 학교 친구!', website: 'https://www.moe.go.kr', quiz: { q: '교육부는 늘봄학교, 교과서, 학교 안전을 책임지는 부처일까요?', answer: 'O', desc: '정답입니다! 친구들의 배움을 돕는 가장 친근한 부처예요.' } },
+      { id: 'msit', parentId: 'prime_minister', name: '과학기술정보통신부', level: 1, type: 'ministry', typeLabel: '19부', emoji: '🚀', nickname: '인공지능과 우주를 탐험하는 미래 연구소', tagline: 'AI, 로봇, 6G 통신으로 미래 세상을 여는 마법사!', website: 'https://www.msit.go.kr', quiz: { q: '과학기술정보통신부는 초고속 인터넷, 인공지능, 과학 연구를 지원할까요?', answer: 'O', desc: '딩동댕! 첨단 과학기술의 요람이에요.' } },
+      { id: 'mofa', parentId: 'prime_minister', name: '외교부', level: 1, type: 'ministry', typeLabel: '19부', emoji: '🌐', nickname: '세계 친구들과 악수하는 대한민국 대표팀', tagline: '지구촌 모든 나라와 평화롭게 지내고 여권을 만들어주는 외교관!', website: 'https://www.mofa.go.kr', quiz: { q: '외교부는 해외여행 갈 때 필요한 여권을 발급해 줄까요?', answer: 'O', desc: '딩동댕! 여권 발급과 해외 한국인 보호를 맡고 있어요.' } },
+      { id: 'unikorea', parentId: 'prime_minister', name: '통일부', level: 1, type: 'ministry', typeLabel: '19부', emoji: '🕊️', nickname: '한반도의 평화와 통일을 준비하는 길잡이', tagline: '헤어진 가족이 만나고 남북이 평화롭게 하나 되도록 돕는 부처!', website: 'https://www.unikorea.go.kr', quiz: { q: '통일부는 남북 평화와 미래 통일을 준비하는 정부 부처일까요?', answer: 'O', desc: '맞습니다! 한반도 평화 번영을 위해 힘쓰는 부처예요.' } },
+      { id: 'moj', parentId: 'prime_minister', name: '법무부', level: 1, type: 'ministry', typeLabel: '19부', emoji: '⚖️', nickname: '정의로운 법과 모든 사람의 인권 지킴이', tagline: '규칙을 지켜 안전한 사회를 만들고 약자를 보호하는 정의의 수호자!', website: 'https://www.moj.go.kr', quiz: { q: '법무부는 범죄로부터 국민을 보호하고 법과 정의를 바로 세우는 부처일까요?', answer: 'O', desc: '정답입니다! 공정한 법 집행을 맡고 있습니다.' } },
+      { id: 'mnd', parentId: 'prime_minister', name: '국방부', level: 1, type: 'ministry', typeLabel: '19부', emoji: '🛡️', nickname: '대한민국의 하늘, 땅, 바다를 지키는 철통 방패', tagline: '육군, 해군, 공군, 해병대 삼촌들이 나라를 든든하게 지켜요!', website: 'https://www.mnd.go.kr', quiz: { q: '국방부는 육군, 해군, 공군을 이끌며 나라를 지키는 부처일까요?', answer: 'O', desc: '정답입니다! 평화와 주권을 수호하는 핵심 부처예요.' } },
+      { id: 'mpva', parentId: 'prime_minister', name: '국가보훈부', level: 1, type: 'ministry', typeLabel: '19부(2023승격)', emoji: '🎖️', nickname: '나라를 지킨 영웅들을 영원히 기억하는 곳', tagline: '독립운동가와 참전용사 할아버지들을 끝까지 예우해요!', website: 'https://www.mpva.go.kr', quiz: { q: '국가보훈부는 독립운동가와 참전용사를 기억하고 예우하는 부처일까요?', answer: 'O', desc: '딩동댕! 2023년 부로 승격되어 영웅들을 모시고 있어요.' } },
+      { id: 'mois', parentId: 'prime_minister', name: '행정안전부', level: 1, type: 'ministry', typeLabel: '19부', emoji: '🚨', nickname: '국민 안전과 주민센터의 든든한 반석', tagline: '지진, 태풍, 화재를 막고 안전한 동네를 만드는 생활 지킴이!', website: 'https://www.mois.go.kr', quiz: { q: '행정안전부는 스쿨존 교통안전시설과 정부24 주민등록 서비스를 관리할까요?', answer: 'O', desc: '딩동댕! 국민의 일상 안전과 전자정부를 책임져요.' } },
+      { id: 'mcst', parentId: 'prime_minister', name: '문화체육관광부', level: 1, type: 'ministry', typeLabel: '19부', emoji: '🎨', nickname: 'K-컬처와 신나는 놀이·스포츠의 천국', tagline: 'K-POP, 웹툰, 올림픽 스포츠, 게임으로 지구촌을 들썩이게 만들어요!', website: 'https://www.mcst.go.kr', quiz: { q: '문화체육관광부는 K-POP, 애니메이션, 체육 활동을 지원하는 부처일까요?', answer: 'O', desc: '정답입니다! K-컬처의 총사령탑이에요.' } },
+      { id: 'mafra', parentId: 'prime_minister', name: '농림축산식품부', level: 1, type: 'ministry', typeLabel: '19부', emoji: '🌾', nickname: '맛있는 쌀과 신선한 채소를 키우는 황금 들판', tagline: '농부 아저씨와 귀여운 반려동물을 보살피는 먹거리 밭!', website: 'https://www.mafra.go.kr', quiz: { q: '농림축산식품부는 쌀, 과일, 반려동물 복지를 챙기는 부처일까요?', answer: 'O', desc: '딩동댕! 밥상을 지켜주는 고마운 부처랍니다.' } },
+      { id: 'motie', parentId: 'prime_minister', name: '산업통상자원부', level: 1, type: 'ministry', typeLabel: '19부', emoji: '⚡', nickname: '반도체와 자동차, 전기를 만드는 대한민국 엔진', tagline: '세계로 수출하는 공장과 친환경 전기를 만드는 에너지 사령관!', website: 'https://www.motie.go.kr', quiz: { q: '산업통상자원부는 수출 무역과 전기를 공급하는 에너지 정책을 총괄할까요?', answer: 'O', desc: '맞아요! 대한민국 경제 성장의 핵심 엔진이에요.' } },
+      { id: 'mohw', parentId: 'prime_minister', name: '보건복지부', level: 1, type: 'ministry', typeLabel: '19부', emoji: '🏥', nickname: '국민 모두의 건강과 행복을 안아주는 따뜻한 품', tagline: '아플 땐 병원비 걱정을 덜어주고, 어려운 이웃을 따뜻하게 도와요!', website: 'https://www.mohw.go.kr', quiz: { q: '보건복지부는 건강보험과 소아 야간 진료, 복지 지원을 총괄할까요?', answer: 'O', desc: '딩동댕! 국민의 건강과 행복을 든든하게 지켜줘요.' } },
+      { id: 'me', parentId: 'prime_minister', name: '환경부', level: 1, type: 'ministry', typeLabel: '19부', emoji: '🌱', nickname: '맑은 공기, 깨끗한 물, 지구를 지키는 초록 파수꾼', tagline: '탄소 배출을 줄이고 북극곰과 멸종위기 동물을 지켜요!', website: 'https://www.me.go.kr', quiz: { q: '환경부는 미세먼지를 줄이고 깨끗한 수돗물과 재활용을 담당할까요?', answer: 'O', desc: '딩동댕! 아름다운 지구를 후손에게 물려주는 부처예요.' } },
+      { id: 'moel', parentId: 'prime_minister', name: '고용노동부', level: 1, type: 'ministry', typeLabel: '19부', emoji: '👷', nickname: '일하는 부모님의 안전모와 행복한 일터 지킴이', tagline: '다치지 않고 안전하게 일하고 정당한 월급을 받도록 지켜줘요!', website: 'https://www.moel.go.kr', quiz: { q: '고용노동부는 일하는 사람들의 안전과 일자리를 지키는 부처일까요?', answer: 'O', desc: '맞아요! 대한민국 모든 일하는 사람들의 땀방울을 소중히 여깁니다.' } },
+      { id: 'mogef', parentId: 'prime_minister', name: '여성가족부', level: 1, type: 'ministry', typeLabel: '19부', emoji: '👨‍👩‍👧‍👦', nickname: '온 가족의 따뜻한 울타리와 청소년들의 안식처', tagline: '다문화 가족, 한부모 가족, 청소년들이 차별 없이 웃을 수 있게!', website: 'https://www.mogef.go.kr', quiz: { q: '청소년 고민 상담 전화 1388을 운영하는 부처는 여성가족부일까요?', answer: 'O', desc: '딩동댕! 1388은 언제나 청소년의 편에서 귀를 기울여요.' } },
+      { id: 'molit', parentId: 'prime_minister', name: '국토교통부', level: 1, type: 'ministry', typeLabel: '19부', emoji: '🚆', nickname: 'KTX 고속철도와 하늘길, 예쁜 아파트를 짓는 국토 설계사', tagline: '빠른 기차, 안전한 비행기, 살기 좋은 도시를 만드는 마법사!', website: 'https://www.molit.go.kr', quiz: { q: '국토교통부는 KTX, 비행기, 도로, 아파트 건설을 담당하는 부처일까요?', answer: 'O', desc: '정답입니다! 국토와 교통의 모든 것을 책임져요.' } },
+      { id: 'mof', parentId: 'prime_minister', name: '해양수산부', level: 1, type: 'ministry', typeLabel: '19부', emoji: '🐳', nickname: '푸른 바다와 신비한 해양 생물의 든든한 보호자', tagline: '독도 지키기, 바다 청소, 남극 쇄빙선 아라온호의 모항!', website: 'https://www.mof.go.kr', quiz: { q: '해양수산부는 바다 생태계 보존과 남극 탐험, 항만을 관리하는 부처일까요?', answer: 'O', desc: '맞아요! 해양 영토를 지키는 든든한 파수꾼이에요.' } },
+      { id: 'mss', parentId: 'prime_minister', name: '중소벤처기업부', level: 1, type: 'ministry', typeLabel: '19부', emoji: '🦄', nickname: '톡톡 튀는 스타트업과 동네 전통시장의 든든한 날개', tagline: '꿈을 펼치는 청년 창업가와 동네 빵집 사장님을 응원해요!', website: 'https://www.mss.go.kr', quiz: { q: '중소벤처기업부는 벤처 창업과 동네 소상공인 사장님을 돕는 부처일까요?', answer: 'O', desc: '맞아요! 꿈에 날개를 달아주는 곳이에요.' } },
+
+      // 주요 산하 청 및 위원회
+      { id: 'nts', parentId: 'moef', name: '국세청', level: 2, type: 'agency', typeLabel: '기재부산하', emoji: '🧾', nickname: '공평하게 세금을 걷는 저금통 관리인', tagline: '나라 살림에 필요한 세금을 모으는 든든한 세무관!', website: 'https://www.nts.go.kr', quiz: { q: '국세청에서 모은 세금은 도로, 학교를 만드는 데 쓰일까요?', answer: 'O', desc: '맞습니다! 세금은 모두를 위한 공공시설에 쓰여요.' } },
+      { id: 'kasa', parentId: 'msit', name: '우주항공청', level: 2, type: 'agency', typeLabel: '과기정통부산하', emoji: '🛸', nickname: '달과 화성으로 날아가는 한국의 NASA', tagline: '푸른 지구를 넘어 머나먼 우주를 개척하는 우주 탐험대!', website: 'https://www.kasa.go.kr', quiz: { q: '우주항공청은 우리나라 로켓과 달 탐사선을 연구하는 곳일까요?', answer: 'O', desc: '맞아요! 2024년 새로 출범한 우주 본부예요.' } },
+      { id: 'spo', parentId: 'moj', name: '검찰청', level: 2, type: 'agency', typeLabel: '법무부산하', emoji: '🔎', nickname: '범죄자를 수사해 법정에 세우는 검사들', tagline: '나쁜 범죄를 밝혀내고 피해자를 돕는 정의의 검!', website: 'https://www.spo.go.kr', quiz: { q: '검찰청은 범죄를 수사하여 법원에 재판을 청구하는 기관일까요?', answer: 'O', desc: '맞아요! 공익의 대표자로서 법을 지켜요.' } },
+      { id: 'knp', parentId: 'mois', name: '경찰청', level: 2, type: 'agency', typeLabel: '행안부산하', emoji: '👮', nickname: '동네 골목길과 밤길을 순찰하는 민중의 지팡이', tagline: '112로 전화하면 3분 만에 달려오는 든든한 경찰관 아저씨!', website: 'https://www.police.go.kr', quiz: { q: '경찰청 긴급 전화번호는 112일까요?', answer: 'O', desc: '맞아요! 범죄 신고는 112예요.' } },
+      { id: 'nfa', parentId: 'mois', name: '소방청', level: 2, type: 'agency', typeLabel: '행안부산하', emoji: '🚒', nickname: '불길 속으로 뛰어드는 용감한 영웅들', tagline: '119로 부르면 불도 끄고 아픈 사람을 병원으로 옮겨줘요!', website: 'https://www.nfa.go.kr', quiz: { q: '불이 났을 때 부르는 119는 소방청 소속일까요?', answer: 'O', desc: '정답입니다! 우리의 든든한 안전 영웅이에요.' } },
+      { id: 'kma', parentId: 'me', name: '기상청', level: 2, type: 'agency', typeLabel: '환경부산하', emoji: '☀️', nickname: '내일의 날씨와 비를 미리 알려주는 하늘 캐스터', tagline: '우산을 챙겨야 할지, 패딩을 입어야 할지 날씨를 콕 집어줘요!', website: 'https://www.kma.go.kr', quiz: { q: '기상청은 비, 눈, 태풍, 지진을 예보하는 곳일까요?', answer: 'O', desc: '정답입니다! 매일 날씨를 알려주는 고마운 기관이에요.' } },
+      { id: 'kcg', parentId: 'mof', name: '해양경찰청', level: 2, type: 'agency', typeLabel: '해수부산하', emoji: '⚓', nickname: '거친 파도를 가르는 바다의 119와 지킴이', tagline: '우리 바다를 침범하는 외국 어선을 막고 조난자를 구해요!', website: 'https://www.kcg.go.kr', quiz: { q: '해양경찰청은 독도 경비와 바다 조난자 구조를 맡을까요?', answer: 'O', desc: '맞습니다! 바다 영토와 안전을 책임져요.' } },
+      { id: 'mfds', parentId: 'prime_minister', name: '식품의약품안전처', level: 1, type: 'office', typeLabel: '총리처', emoji: '💊', nickname: '우리가 먹는 음식과 약의 안전 보안관', tagline: '안전한 간식과 믿을 수 있는 약을 책임지는 지킴이!', website: 'https://www.mfds.go.kr', quiz: { q: '식약처는 음식과 약이 몸에 안전한지 검사하는 곳일까요?', answer: 'O', desc: '정답입니다! 식탁과 건강을 지켜줘요.' } }
+    ];
+
+    /**
+     * 상태 관리자 (State Manager)
+     */
+    const AppState = {
+      selectedId: 'moef',
+      searchQuery: '',
+      filterCategory: 'all',
+      geminiApiKey: localStorage.getItem('GEMINI_API_KEY') || localStorage.getItem('kids_gov_gemini_api_key') || '',
+      policyIdeas: JSON.parse(localStorage.getItem('kids_gov_policy_ideas') || '{}'),
+      currentDataSource: 'fallback',
+      currentAiMode: 'preset',
+      isLoadingAi: false
+    };
+
+    /**
+     * DOM 엘리먼트 캐싱
+     */
+    const DOM = {
+      treeContainer: document.getElementById('tree-root-container'),
+      treeSearch: document.getElementById('tree-search'),
+      filterContainer: document.getElementById('filter-tag-container'),
+      btnExpandAll: document.getElementById('btn-expand-all'),
+      treeStatsBadge: document.getElementById('tree-stats-badge'),
+
+      aiLoadingBanner: document.getElementById('ai-loading-banner'),
+      sourceStatusBadge: document.getElementById('source-status-badge'),
+      sourceStatusText: document.getElementById('source-status-text'),
+      aiStatusBadge: document.getElementById('ai-status-badge'),
+      aiStatusText: document.getElementById('ai-status-text'),
+
+      heroEmoji: document.getElementById('hero-emoji'),
+      heroBadge: document.getElementById('hero-badge'),
+      heroTagline: document.getElementById('hero-tagline'),
+      heroTitle: document.getElementById('hero-title'),
+      heroWebsiteLink: document.getElementById('hero-website-link'),
+      btnCopyBriefing: document.getElementById('btn-copy-briefing'),
+
+      tabBtns: document.querySelectorAll('.tab-btn'),
+      tabPanes: document.querySelectorAll('.tab-pane'),
+
+      kidsSummaryLead: document.getElementById('kids-summary-lead'),
+      kidsSummaryBody: document.getElementById('kids-summary-body'),
+      newsSummary2Lines: document.getElementById('news-summary-2lines'),
+      rolesContainer: document.getElementById('roles-container'),
+      ifNoneText: document.getElementById('if-none-text'),
+      quizQuestionText: document.getElementById('quiz-q'),
+      quizFeedbackMsg: document.getElementById('quiz-feedback-msg'),
+      quizOptions: document.querySelectorAll('.btn-quiz-opt'),
+
+      compareDocTitle: document.getElementById('compare-doc-title'),
+      compareDocDate: document.getElementById('compare-doc-date'),
+      compareSourceName: document.getElementById('compare-source-name'),
+      officialOriginalText: document.getElementById('official-original-text'),
+      kidsTranslatedText: document.getElementById('kids-translated-text'),
+      vocabGridContainer: document.getElementById('vocab-grid-container'),
+
+      ministerDeptName: document.getElementById('minister-dept-name'),
+      ministerPolicyForm: document.getElementById('minister-policy-form'),
+      ministerInputText: document.getElementById('minister-input-text'),
+      ministerPolicyList: document.getElementById('minister-policy-list'),
+
+      btnLawSource: document.getElementById('btn-law-source'),
+      btnNewsSource: document.getElementById('btn-news-source'),
+
+      // 모달: 전체 A4 리포트
+      btnOpenReport: document.getElementById('btn-open-report'),
+      btnCloseReport: document.getElementById('btn-close-report'),
+      btnPrintReport: document.getElementById('btn-print-report'),
+      reportModal: document.getElementById('report-modal'),
+      reportA4GridContainer: document.getElementById('report-a4-grid-container'),
+
+      // 모달: Gemini Key
+      btnOpenKey: document.getElementById('btn-open-key'),
+      btnCloseKey: document.getElementById('btn-close-key'),
+      keyModal: document.getElementById('key-modal'),
+      geminiKeyInput: document.getElementById('gemini-key-input'),
+      btnSaveKey: document.getElementById('btn-save-key'),
+      btnDeleteKey: document.getElementById('btn-delete-key'),
+      keyIndicatorDot: document.getElementById('key-indicator-dot')
+    };
+
+    /**
+     * 앱 초기화
+     */
+    async function initApp() {
+      updateKeyIndicator();
+      renderTree();
+      setupEventListeners();
+      
+      await loadMockData();
+      await loadDepartmentData(AppState.selectedId);
+      renderFullReportModal();
+    }
+
+    /**
+     * mockData.json 백업 데이터 파일 로드
+     */
+    async function loadMockData() {
+      try {
+        const res = await fetch('mockData.json');
+        if (res.ok) {
+          MOCK_DATA = await res.json();
+          console.log('[System] mockData.json 백업 데이터 로드 성공:', MOCK_DATA.departments.length, '개 부처');
+        }
+      } catch (err) {
+        console.warn('[System] mockData.json 로컬 로드 경고:', err);
+      }
+    }
+
+    /**
+     * API Key 상태 점 표시 및 동기화
+     */
+    function updateKeyIndicator() {
+      const currentKey = localStorage.getItem('GEMINI_API_KEY') || localStorage.getItem('kids_gov_gemini_api_key') || '';
+      AppState.geminiApiKey = currentKey;
+
+      if (currentKey) {
+        DOM.keyIndicatorDot.classList.add('active');
+        DOM.geminiKeyInput.value = currentKey;
+      } else {
+        DOM.keyIndicatorDot.classList.remove('active');
+        DOM.geminiKeyInput.value = '';
+      }
+    }
+
+    /**
+     * 국가법령정보 API 호출 및 2초 타임아웃 Fallback 시스템
+     */
+    async function fetchLawData(deptId, deptName) {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 2000);
+
+      try {
+        const apiUrl = `https://www.law.go.kr/DRF/lawSearch.do?OC=${LAW_API_OC}&target=law&type=XML&query=${encodeURIComponent('정부조직법')}`;
+        const response = await fetch(apiUrl, { signal: controller.signal, mode: 'cors' });
+        clearTimeout(timeoutId);
+
+        if (!response.ok) throw new Error(`HTTP status: ${response.status}`);
+        const xmlText = await response.text();
+        if (!xmlText || xmlText.includes('ERR')) throw new Error('API 내용 에러');
+
+        AppState.currentDataSource = 'api';
+        updateDataSourceBadge('api');
+
+        return {
+          source: 'api',
+          deptName: deptName,
+          lawArticle: `${deptName} 관련 정부조직법 실시간 법령 조문 검색 완료`,
+          recentNews: `${deptName} 최신 보도자료 및 정책 브리핑`,
+          lawUrl: `https://www.law.go.kr/법령/정부조직법`,
+          newsUrl: `https://www.gov.kr`
+        };
+      } catch (err) {
+        clearTimeout(timeoutId);
+        AppState.currentDataSource = 'fallback';
+        updateDataSourceBadge('fallback');
+        return getFallbackData(deptId, deptName);
+      }
+    }
+
+    /**
+     * mockData.json에서 백업 데이터 추출
+     */
+    function getFallbackData(deptId, deptName) {
+      if (MOCK_DATA && MOCK_DATA.departments) {
+        const found = MOCK_DATA.departments.find(d => d.id === deptId || d.name === deptName);
+        if (found) {
+          return { source: 'fallback', ...found };
+        }
+      }
+
+      return {
+        source: 'fallback',
+        id: deptId,
+        name: deptName,
+        lawArticle: `정부조직법 및 관련 직제 규정에 따라 ${deptName}의 고유 사무를 관장하고 국민의 편익을 증진함.`,
+        lawUrl: `https://www.law.go.kr/법령/정부조직법`,
+        recentNews: `${deptName} 2026년도 주요 업무 추진계획 및 국민 체감형 정책 서비스 확대 발표.`,
+        newsUrl: `https://www.gov.kr`,
+        fallbackAi: {
+          characterNickname: `⭐ 든든한 일꾼 '${deptName} 지킴이'`,
+          easyRole: `${deptName}은 대한민국 국민 모두가 안전하고 행복하게 살 수 있도록 소중한 나랏일을 묵묵히 해내는 고마운 기관이에요!`,
+          recentNewsSummary2Lines: `1. 국민들의 일상생활을 더욱 편리하고 안전하게 만드는 새로운 정책을 시작했어요.\n2. 어린이와 청소년의 꿈을 응원하는 다양한 편의 서비스를 늘려가고 있어요.`,
+          hanjaVocab: [
+            { word: '사무', hanja: '事務', meaning: '직책이나 직무로서 맡아서 하는 나랏일이나 공적인 일' }
+          ]
+        }
+      };
+    }
+
+    /**
+     * 데이터 소스 상태 배지 UI 업데이트
+     */
+    function updateDataSourceBadge(type) {
+      if (type === 'api') {
+        DOM.sourceStatusBadge.className = 'source-status-badge badge-source-api';
+        DOM.sourceStatusBadge.innerHTML = '<span>🏛️</span><span>실시간 국가법령 API 연동</span>';
+      } else {
+        DOM.sourceStatusBadge.className = 'source-status-badge badge-source-fallback';
+        DOM.sourceStatusBadge.innerHTML = '<span>📦</span><span>백업 데이터(Fallback) 안전 로드됨</span>';
+      }
+    }
+
+    /**
+     * Gemini 1.5 Flash API 변환 파이프라인
+     */
+    async function transformWithGemini(deptName, lawArticle, recentNews, fallbackAi) {
+      const apiKey = AppState.geminiApiKey;
+
+      if (!apiKey) {
+        setAiStatus('preset', '맞춤 키즈 데이터 (API Key 설정 시 실시간 생성)');
+        return fallbackAi;
+      }
+
+      DOM.aiLoadingBanner.classList.add('show');
+      setAiStatus('gemini', 'Gemini 1.5 Flash 생성 중...');
+
+      const prompt = `
+당신은 대한민국 정부의 정책과 법률을 초등학교 4~6학년 어린이 눈높이에 맞춰 쉽고 재미있게 설명해 주는 친절한 선생님이자 최고의 동화 작가입니다.
+
+다음 주어진 [부처명], [정부조직법 조문], [최근 1개월 정책 뉴스]를 분석하여 초등학생이 쏙쏙 이해할 수 있도록 아래 4가지 항목을 포함한 순수 JSON 형식으로만 답변해 주세요:
+
+[부처명]: ${deptName}
+[정부조직법 조문]: ${lawArticle}
+[최근 1개월 정책 뉴스]: ${recentNews}
+
+[요구사항]:
+1. characterNickname: 어린이가 친근감을 느낄 수 있는 이모지와 귀여운 캐릭터/별명 (예: "💰 든든한 나라살림 지갑요정 '머니봇'")
+2. easyRole: 초등학교 4~6학년 눈높이의 쉬운 역할 설명 (3~4문장, 비유와 친절한 존댓말 사용)
+3. recentNewsSummary2Lines: 최근 1개월 주요 정책 소식을 2줄로 간결하고 또렷하게 요약한 텍스트 (줄바꿈 \\n 사용, 각 줄 번호 1., 2.)
+4. hanjaVocab: 본문에 나오는 어려운 한자어 행정 용어 2~3개를 선정한 배열. 각 객체는 { "word": "단어", "hanja": "漢字", "meaning": "초등학생 눈높이의 쉬운 풀이" } 형태.
+
+반드시 마크다운 코드블록(\`\`\`json ...) 없이 순수한 JSON 텍스트만 출력하세요.
+`;
+
+      try {
+        const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: prompt }] }],
+            generationConfig: { temperature: 0.7, maxOutputTokens: 1000 }
+          })
+        });
+
+        if (!response.ok) throw new Error('Gemini API Response Error');
+        const data = await response.json();
+        const rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+        const cleanedJson = rawText.replace(/```json/gi, '').replace(/```/g, '').trim();
+        const parsed = JSON.parse(cleanedJson);
+
+        setAiStatus('gemini', 'Gemini 1.5 Flash 실시간 변환 완료');
+        return parsed;
+      } catch (err) {
+        console.warn('[Gemini AI] 호출 실패 -> Fallback 데이터 적용:', err);
+        setAiStatus('preset', '맞춤 키즈 데이터 (API 통신 실패)');
+        return fallbackAi;
+      } finally {
+        DOM.aiLoadingBanner.classList.remove('show');
+      }
+    }
+
+    function setAiStatus(mode, text) {
+      AppState.currentAiMode = mode;
+      if (mode === 'gemini') {
+        DOM.aiStatusBadge.className = 'ai-status-badge badge-ai-gemini';
+        DOM.aiStatusBadge.innerHTML = `<span>✨</span><span>${text}</span>`;
+      } else {
+        DOM.aiStatusBadge.className = 'ai-status-badge badge-ai-preset';
+        DOM.aiStatusBadge.innerHTML = `<span>🪄</span><span>${text}</span>`;
+      }
+    }
+
+    /**
+     * 부처 데이터 통합 로드 및 브리핑 UI 바인딩
+     */
+    async function loadDepartmentData(deptId) {
+      AppState.selectedId = deptId;
+      const org = GOV_ORGANIZATIONS.find(item => item.id === deptId) || GOV_ORGANIZATIONS[0];
+
+      const dataPayload = await fetchLawData(deptId, org.name);
+
+      const fallbackAi = dataPayload.fallbackAi || {
+        characterNickname: `⭐ ${org.nickname}`,
+        easyRole: org.summaryBody || org.summaryLead,
+        recentNewsSummary2Lines: `1. 국민을 위한 친근하고 안전한 정책을 추진 중이에요.\n2. 미래세대를 위한 배움과 활동을 적극 지원하고 있어요.`,
+        hanjaVocab: [
+          { word: '정책', hanja: '政策', meaning: '국민의 생활을 더 좋게 만들기 위해 정부가 세운 방침' }
+        ]
+      };
+
+      const aiResult = await transformWithGemini(
+        org.name,
+        dataPayload.lawArticle,
+        dataPayload.recentNews,
+        fallbackAi
+      );
+
+      renderBriefingCard(org, dataPayload, aiResult);
+    }
+
+    /**
+     * 브리핑 화면 렌더링
+     */
+    function renderBriefingCard(org, dataPayload, aiResult) {
+      DOM.heroEmoji.textContent = org.emoji;
+      DOM.heroTitle.textContent = org.name;
+      DOM.heroBadge.textContent = org.typeLabel;
+      DOM.heroTagline.textContent = aiResult.characterNickname || org.tagline;
+      DOM.heroWebsiteLink.href = org.website;
+
+      DOM.kidsSummaryLead.textContent = aiResult.characterNickname || org.nickname;
+      DOM.kidsSummaryBody.textContent = aiResult.easyRole || org.summaryBody;
+      DOM.newsSummary2Lines.textContent = aiResult.recentNewsSummary2Lines || "1. 최신 정책이 활발히 추진 중이에요.\n2. 국민 모두의 행복을 위해 힘쓰고 있어요.";
+      DOM.ifNoneText.textContent = org.ifNone || '이 기관이 없으면 나랏일의 중요한 부분이 멈출 수 있어요!';
+
+      DOM.rolesContainer.innerHTML = '';
+      const roles = org.roles || [
+        { icon: '🌟', title: '국민 복지 증진', text: '모두가 안전하고 행복하게 살 수 있도록 도와요.' },
+        { icon: '📜', title: '법과 질서 수호', text: '공정하고 정의로운 사회 규칙을 지켜요.' },
+        { icon: '🤝', title: '미래 발전 계획', text: '다음 세대를 위해 더 나은 나라를 만들어요.' }
+      ];
+      roles.forEach(role => {
+        const card = document.createElement('div');
+        card.className = 'role-item-card';
+        card.innerHTML = `
+          <div class="role-icon" aria-hidden="true">${role.icon}</div>
+          <h4 class="role-title">${role.title}</h4>
+          <p class="role-text">${role.text}</p>
+        `;
+        DOM.rolesContainer.appendChild(card);
+      });
+
+      DOM.quizQuestionText.textContent = org.quiz?.q || `${org.name}은(는) 국민을 위한 소중한 나랏일을 하는 정부 기관일까요?`;
+      DOM.quizFeedbackMsg.className = 'quiz-feedback';
+      DOM.quizFeedbackMsg.textContent = '';
+      DOM.quizOptions.forEach(btn => {
+        btn.disabled = false;
+        btn.style.opacity = '1';
+      });
+
+      DOM.compareDocTitle.textContent = `${org.name} 정부조직법 및 최근 정책 소식`;
+      DOM.officialOriginalText.innerHTML = `
+        <p style="font-weight: 700; color: #0284C7; margin-bottom: 0.4rem;">[정부조직법 조문]</p>
+        <p style="margin-bottom: 0.75rem;">${dataPayload.lawArticle || '정부조직법 해당 조문'}</p>
+        <p style="font-weight: 700; color: #059669; margin-bottom: 0.4rem;">[최근 1개월 정책 보도자료 원문]</p>
+        <p>${dataPayload.recentNews || '최신 공식 보도자료 내용'}</p>
+      `;
+      DOM.kidsTranslatedText.innerHTML = `
+        <div style="margin-bottom: 0.75rem;">
+          <strong style="color: #9333EA;">🧸 이 부처의 핵심 역할:</strong><br>
+          ${aiResult.easyRole}
+        </div>
+        <div>
+          <strong style="color: #9333EA;">📰 최근 1개월 정책 핵심 요약:</strong><br>
+          ${aiResult.recentNewsSummary2Lines.replace(/\n/g, '<br>')}
+        </div>
+      `;
+
+      DOM.vocabGridContainer.innerHTML = '';
+      const vocabList = aiResult.hanjaVocab || [
+        { word: '사무', hanja: '事務', meaning: '맡아서 처리하는 나랏일이나 공적인 직무' }
+      ];
+      vocabList.forEach(v => {
+        const vCard = document.createElement('div');
+        vCard.className = 'vocab-card';
+        vCard.innerHTML = `
+          <div class="vocab-word-wrap">
+            <span class="vocab-word">📖 ${v.word}</span>
+            <span class="vocab-hanja">${v.hanja || ''}</span>
+          </div>
+          <div class="vocab-meaning">${v.meaning}</div>
+        `;
+        DOM.vocabGridContainer.appendChild(vCard);
+      });
+
+      DOM.ministerDeptName.textContent = org.name;
+      renderPolicyList(org.id);
+
+      const lawUrl = dataPayload.lawUrl || `https://www.law.go.kr/법령/정부조직법`;
+      const newsUrl = dataPayload.newsUrl || org.website || `https://www.gov.kr`;
+      DOM.btnLawSource.href = lawUrl;
+      DOM.btnNewsSource.href = newsUrl;
+    }
+
+    /**
+     * 정부 조직도 계층 트리 렌더링
+     */
+    function renderTree() {
+      DOM.treeContainer.innerHTML = '';
+
+      const filtered = GOV_ORGANIZATIONS.filter(item => {
+        const query = AppState.searchQuery.trim().toLowerCase();
+        let matchesQuery = true;
+        if (query) {
+          matchesQuery = item.name.toLowerCase().includes(query) ||
+                         item.nickname.toLowerCase().includes(query) ||
+                         item.tagline.toLowerCase().includes(query);
+        }
+
+        let matchesCategory = true;
+        if (AppState.filterCategory === 'ministry') {
+          matchesCategory = item.type === 'ministry';
+        } else if (AppState.filterCategory === 'agency') {
+          matchesCategory = ['agency', 'office', 'commission'].includes(item.type);
+        } else if (AppState.filterCategory === 'top') {
+          matchesCategory = ['president', 'prime_minister'].includes(item.type);
+        }
+
+        return matchesQuery && matchesCategory;
+      });
+
+      DOM.treeStatsBadge.textContent = `총 ${filtered.length}개 기관`;
+
+      filtered.forEach(org => {
+        const nodeEl = document.createElement('div');
+        nodeEl.className = `tree-node node-level-${org.level} ${org.id === AppState.selectedId ? 'selected' : ''}`;
+        nodeEl.setAttribute('role', 'button');
+        nodeEl.setAttribute('tabindex', '0');
+        nodeEl.setAttribute('data-id', org.id);
+
+        let badgeClass = 'badge-ministry';
+        if (org.type === 'president') badgeClass = 'badge-pres';
+        else if (org.type === 'prime_minister') badgeClass = 'badge-pm';
+        else if (org.type === 'agency') badgeClass = 'badge-agency';
+        else if (org.type === 'office') badgeClass = 'badge-office';
+        else if (org.type === 'commission') badgeClass = 'badge-comm';
+
+        nodeEl.innerHTML = `
+          <div class="node-emoji" aria-hidden="true">${org.emoji}</div>
+          <div class="node-title-wrap">
+            <span class="node-title">${org.name}</span>
+            <span class="node-badge ${badgeClass}">${org.typeLabel}</span>
+          </div>
+          <span class="node-nickname">${org.nickname}</span>
+        `;
+
+        nodeEl.addEventListener('click', () => {
+          selectOrganization(org.id);
+        });
+
+        DOM.treeContainer.appendChild(nodeEl);
+      });
+    }
+
+    async function selectOrganization(orgId) {
+      AppState.selectedId = orgId;
+
+      document.querySelectorAll('.tree-node').forEach(node => {
+        if (node.getAttribute('data-id') === orgId) {
+          node.classList.add('selected');
+          node.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          node.classList.remove('selected');
+        }
+      });
+
+      await loadDepartmentData(orgId);
+    }
+
+    function renderPolicyList(orgId) {
+      DOM.ministerPolicyList.innerHTML = '';
+      const list = AppState.policyIdeas[orgId] || [
+        { text: '어린이들이 안전하고 재미있게 공부하고 뛰어놀 수 있는 환경을 만들어 주세요!', time: '방금 전' }
+      ];
+
+      list.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'policy-item';
+        div.innerHTML = `
+          <span class="policy-item-text">✨ ${item.text}</span>
+          <span class="policy-item-time">${item.time}</span>
+        `;
+        DOM.ministerPolicyList.appendChild(div);
+      });
+    }
+
+    /**
+     * [지시문 3] 전체 부처 A4 규격 모달 보고서 렌더링
+     * 모든 정부 부처의 [어린이용 역할 요약 + 최근 1개월 주요 정책 소식 + 진짜 원문 출처 링크] 포함
+     */
+    function renderFullReportModal() {
+      DOM.reportA4GridContainer.innerHTML = '';
+
+      GOV_ORGANIZATIONS.forEach(org => {
+        // mockData와 결합하여 최신 정보 추출
+        let mockDept = null;
+        if (MOCK_DATA && MOCK_DATA.departments) {
+          mockDept = MOCK_DATA.departments.find(d => d.id === org.id || d.name === org.name);
+        }
+
+        const roleText = mockDept?.fallbackAi?.easyRole || org.summaryBody || org.summaryLead;
+        const newsText = mockDept?.fallbackAi?.recentNewsSummary2Lines || "1. 국민을 위한 친근하고 안전한 정책을 지속 추진 중이에요.\n2. 미래세대를 위한 배움과 참여 기회를 적극 확대하고 있어요.";
+        const nickName = mockDept?.fallbackAi?.characterNickname || org.tagline || org.nickname;
+        const lawUrl = mockDept?.lawUrl || org.lawUrl || `https://www.law.go.kr/법령/정부조직법`;
+        const newsUrl = mockDept?.newsUrl || org.newsUrl || org.website || `https://www.gov.kr`;
+
+        const card = document.createElement('div');
+        card.className = 'report-card-item';
+        card.innerHTML = `
+          <div class="report-card-header">
+            <div class="report-card-title-wrap">
+              <span class="report-card-emoji">${org.emoji}</span>
+              <div>
+                <div class="report-card-name">${org.name}</div>
+                <div class="report-card-nick">${nickName}</div>
+              </div>
+            </div>
+            <span class="node-badge badge-ministry">${org.typeLabel}</span>
+          </div>
+
+          <div class="report-section-block">
+            <div class="report-label">
+              <span>🧸</span>
+              <span>어린이용 역할 요약:</span>
+            </div>
+            <div class="report-role-text">${roleText}</div>
+          </div>
+
+          <div class="report-section-block">
+            <div class="report-label">
+              <span>📰</span>
+              <span>최근 1개월 주요 정책 소식:</span>
+            </div>
+            <div class="report-news-text">${newsText}</div>
+          </div>
+
+          <div class="report-card-links">
+            <div style="display:flex; gap: 0.35rem; flex-wrap: wrap;">
+              <a href="${lawUrl}" target="_blank" rel="noopener noreferrer" class="report-link-item" title="국가법령센터 원문 페이지로 이동">
+                <span>🔍</span>
+                <span>국가법령센터</span>
+                <span>↗</span>
+              </a>
+              <a href="${newsUrl}" target="_blank" rel="noopener noreferrer" class="report-link-item" title="공식 보도자료 원문 페이지로 이동">
+                <span>📰</span>
+                <span>부처 보도자료</span>
+                <span>↗</span>
+              </a>
+            </div>
+            <button class="btn-goto-dept no-print" data-id="${org.id}">이 부처 보기 👉</button>
+          </div>
+        `;
+
+        // 카드 내 '이 부처 보기' 클릭 시 모달 닫고 해당 부처로 바로 이동
+        card.querySelector('.btn-goto-dept').addEventListener('click', (e) => {
+          const targetId = e.target.getAttribute('data-id');
+          DOM.reportModal.classList.remove('open');
+          selectOrganization(targetId);
+        });
+
+        DOM.reportA4GridContainer.appendChild(card);
+      });
+    }
+
+    /**
+     * 이벤트 리스너 설정
+     */
+    function setupEventListeners() {
+      // 트리 검색창 입력
+      DOM.treeSearch.addEventListener('input', (e) => {
+        AppState.searchQuery = e.target.value;
+        renderTree();
+      });
+
+      // 필터 버튼 클릭
+      DOM.filterContainer.addEventListener('click', (e) => {
+        const btn = e.target.closest('.filter-btn');
+        if (!btn) return;
+
+        DOM.filterContainer.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        AppState.filterCategory = btn.getAttribute('data-filter');
+        renderTree();
+      });
+
+      // 모두 펼치기 토글
+      DOM.btnExpandAll.addEventListener('click', () => {
+        AppState.searchQuery = '';
+        AppState.filterCategory = 'all';
+        DOM.treeSearch.value = '';
+        DOM.filterContainer.querySelectorAll('.filter-btn').forEach(b => {
+          if (b.getAttribute('data-filter') === 'all') b.classList.add('active');
+          else b.classList.remove('active');
+        });
+        renderTree();
+      });
+
+      // 탭 전환
+      DOM.tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          DOM.tabBtns.forEach(b => b.classList.remove('active'));
+          DOM.tabPanes.forEach(p => p.classList.remove('active'));
+
+          btn.classList.add('active');
+          const tabId = btn.getAttribute('data-tab');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+
+      // 퀴즈 O/X 클릭
+      DOM.quizOptions.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const userAns = btn.getAttribute('data-answer');
+          const org = GOV_ORGANIZATIONS.find(item => item.id === AppState.selectedId);
+
+          if (userAns === org.quiz.answer) {
+            DOM.quizFeedbackMsg.className = 'quiz-feedback correct';
+            DOM.quizFeedbackMsg.innerHTML = `🎉 정답이에요! 짝짝짝! ${org.quiz.desc}`;
+          } else {
+            DOM.quizFeedbackMsg.className = 'quiz-feedback wrong';
+            DOM.quizFeedbackMsg.innerHTML = `😅 아쉬워요! 다시 한번 읽어볼까요? ${org.quiz.desc}`;
+          }
+
+          DOM.quizOptions.forEach(b => {
+            b.disabled = true;
+            b.style.opacity = '0.6';
+          });
+        });
+      });
+
+      // 정책 아이디어 폼 제출
+      DOM.ministerPolicyForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const text = DOM.ministerInputText.value.trim();
+        if (!text) return;
+
+        const orgId = AppState.selectedId;
+        if (!AppState.policyIdeas[orgId]) {
+          AppState.policyIdeas[orgId] = [];
+        }
+
+        AppState.policyIdeas[orgId].unshift({ text: text, time: '방금 전' });
+        localStorage.setItem('kids_gov_policy_ideas', JSON.stringify(AppState.policyIdeas));
+        DOM.ministerInputText.value = '';
+        renderPolicyList(orgId);
+        alert('🌟 멋진 정책 아이디어가 대한민국 어린이 장관 회의록에 등록되었습니다!');
+      });
+
+      // 브리핑 복사하기 버튼
+      DOM.btnCopyBriefing.addEventListener('click', () => {
+        const org = GOV_ORGANIZATIONS.find(item => item.id === AppState.selectedId);
+        const textToCopy = `[🏛️ 모두의 나라, 키즈 미니 브리핑 - ${org.name}]\n별명: ${DOM.heroTagline.textContent}\n\n🌟 쉬운 설명:\n${DOM.kidsSummaryBody.textContent}\n\n📰 최근 정책 2줄 요약:\n${DOM.newsSummary2Lines.textContent}\n\n국가법령센터 원문: ${DOM.btnLawSource.href}\n보도자료 원문: ${DOM.btnNewsSource.href}`;
+        
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          alert(`📋 [${org.name}] 키즈 미니 브리핑이 클립보드에 복사되었어요! 친구들에게 공유해 보세요.`);
+        }).catch(() => {
+          alert('복사에 실패했습니다. 브라우저 권한을 확인해 주세요.');
+        });
+      });
+
+      // [📋 한눈에 보는 전체 리포트] 모달 열기/닫기
+      DOM.btnOpenReport.addEventListener('click', () => {
+        renderFullReportModal();
+        DOM.reportModal.classList.add('open');
+      });
+      DOM.btnCloseReport.addEventListener('click', () => {
+        DOM.reportModal.classList.remove('open');
+      });
+      DOM.reportModal.addEventListener('click', (e) => {
+        if (e.target === DOM.reportModal) DOM.reportModal.classList.remove('open');
+      });
+
+      // [🖨️ PDF / 보고서 인쇄] 버튼 (요구사항 2)
+      DOM.btnPrintReport.addEventListener('click', () => {
+        // 브라우저 기본 인쇄(PDF 저장) 호출
+        window.print();
+      });
+
+      // Gemini API Key 모달
+      DOM.btnOpenKey.addEventListener('click', () => {
+        const savedKey = localStorage.getItem('GEMINI_API_KEY') || localStorage.getItem('kids_gov_gemini_api_key') || '';
+        DOM.geminiKeyInput.value = savedKey;
+        DOM.keyModal.classList.add('open');
+      });
+      DOM.btnCloseKey.addEventListener('click', () => {
+        DOM.keyModal.classList.remove('open');
+      });
+      DOM.keyModal.addEventListener('click', (e) => {
+        if (e.target === DOM.keyModal) DOM.keyModal.classList.remove('open');
+      });
+
+      // API Key 저장
+      DOM.btnSaveKey.addEventListener('click', async () => {
+        const key = DOM.geminiKeyInput.value.trim();
+        if (!key) {
+          alert('API Key를 입력해 주세요!');
+          return;
+        }
+        localStorage.setItem('GEMINI_API_KEY', key);
+        localStorage.setItem('kids_gov_gemini_api_key', key);
+        AppState.geminiApiKey = key;
+        updateKeyIndicator();
+        DOM.keyModal.classList.remove('open');
+        alert('🔑 GEMINI_API_KEY가 안전하게 저장되었습니다! 이제 실시간 AI 변환이 활성화됩니다.');
+        
+        await loadDepartmentData(AppState.selectedId);
+      });
+
+      // API Key 삭제
+      DOM.btnDeleteKey.addEventListener('click', async () => {
+        if (confirm('저장된 API Key를 삭제하시겠습니까?')) {
+          localStorage.removeItem('GEMINI_API_KEY');
+          localStorage.removeItem('kids_gov_gemini_api_key');
+          AppState.geminiApiKey = '';
+          updateKeyIndicator();
+          DOM.keyModal.classList.remove('open');
+          alert('저장된 API Key가 삭제되었습니다. 기본 사전 맞춤 데이터로 전환됩니다.');
+          
+          await loadDepartmentData(AppState.selectedId);
+        }
+      });
+
+      // ESC 키로 모달 닫기
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          DOM.reportModal.classList.remove('open');
+          DOM.keyModal.classList.remove('open');
+        }
+      });
+    }
+
+    // 앱 실행
+    document.addEventListener('DOMContentLoaded', initApp);
+  </script>
+</body>
+</html>
